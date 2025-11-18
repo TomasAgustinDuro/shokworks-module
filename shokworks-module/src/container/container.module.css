@@ -1,0 +1,77 @@
+.mainContainer {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.title {
+  width: 50%;
+  color: black;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding: 0 1rem;
+  word-wrap: break-word;
+}
+
+.containerCard {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive */
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: none;
+}
+.buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: black;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+  box-shadow: 0px 10px 30px #99999933;
+  cursor: pointer;
+  border: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .containerCard {
+    width: 75%;
+  }
+
+  .buttons {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .containerCard {
+    width: 100%;
+    display: flex;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1em;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+}

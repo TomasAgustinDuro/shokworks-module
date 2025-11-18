@@ -1,0 +1,21 @@
+/* RESET COMPLETO */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  width: 100%;
+  max-width: 100vw; /* IMPORTANTE: limita el ancho al viewport */
+  overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

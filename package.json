@@ -1,0 +1,11 @@
+{
+  "name": "shokworks-module",
+  "version": "1.0.0",
+  "description": "test module for shokworks",
+  "main": "index.js",
+  "author": "Tomas <durotomaas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.2.0"
+  }
+}
