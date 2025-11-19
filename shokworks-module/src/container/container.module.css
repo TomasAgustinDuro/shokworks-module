@@ -61,6 +61,12 @@
 }
 
 @media (min-width: 900px) {
+  .buttons {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
   .containerCard {
     width: 100%;
     display: flex;

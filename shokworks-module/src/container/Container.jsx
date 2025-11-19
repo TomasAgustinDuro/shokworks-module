@@ -1,13 +1,17 @@
 import Card from "../Card/CardTemp";
-import { useEffect, useState, useRef } from "react";
-import { getInfo } from "../service";
+import { useRef } from "react";
 import styles from "./container.module.css";
+import icon1 from "../resources/icon-1.png";
+import icon2 from "../resources/icon-2.png";
+import icon3 from "../resources/icon-3.png";
+import icon4 from "../resources/icon-4.png";
+import info from "../resources/info.json";
 
 function Container() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const data = info;
   const containerRef = useRef(null);
+
+  const images = { icon1, icon2, icon3, icon4 };
 
   const scrollNext = () => {
     const c = containerRef.current;
@@ -29,39 +33,22 @@ function Container() {
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await getInfo();
-        setData(response);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-
   return (
     <div className={styles.mainContainer}>
       <h2 className={styles.title}>
         What's the <span>Speciality Of Us?</span>
       </h2>
       <div className={styles.containerCard} ref={containerRef}>
-        {loading
-          ? "loading..."
-          : data.length > 0
+        {data.length > 0
           ? data.map((info, i) => (
               <Card
                 key={i}
-                img={info.img}
                 title={info.title}
                 text={info.text}
+                img={images[info.img]}
               />
             ))
-          : error}
+          : "Error"}
       </div>
       <div className={styles.buttons}>
         <button onClick={scrollPrev}>&#8249;</button>
